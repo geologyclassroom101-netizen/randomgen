@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Random Number Generator</title>
+<style>
+body {
+font-family: Arial;
+text-align: center;
+margin-top: 60px;
+}
+
+button {
+font-size: 20px;
+padding: 12px 25px;
+cursor: pointer;
+}
+
+#result {
+font-size: 50px;
+margin: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Random Number Generator</h2>
+<p>Click the button to generate a random number from 1–35.</p>
+
+<div id="result">-</div>
+
+<button onclick="generateNumber()">Generate Number</button>
+
+<script>
+function generateNumber() {
+let num = Math.floor(Math.random() * 35) + 1;
+document.getElementById("result").innerHTML = num;
+}
+</script>
+
+</body>
+</html>
