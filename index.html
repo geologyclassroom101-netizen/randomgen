@@ -1,41 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Random Number Generator</title>
+<title>Earthquake Assignment Generator</title>
+
 <style>
 body {
 font-family: Arial;
 text-align: center;
 margin-top: 60px;
+background-color: #f4f6f8;
+}
+
+h1 {
+font-size: 34px;
+}
+
+#number {
+font-size: 80px;
+margin: 40px;
+font-weight: bold;
+color: #1e4fd1;
 }
 
 button {
-font-size: 20px;
-padding: 12px 25px;
+font-size: 22px;
+padding: 14px 30px;
 cursor: pointer;
+background-color: #1e4fd1;
+color: white;
+border: none;
+border-radius: 6px;
 }
 
-#result {
-font-size: 50px;
-margin: 30px;
+button:hover {
+background-color: #163aa3;
 }
 </style>
+
 </head>
 
 <body>
 
-<h2>Random Number Generator</h2>
-<p>Click the button to generate a random number from 1–35.</p>
+<h1>Earthquake Assignment Number</h1>
 
-<div id="result">-</div>
+<p>Click the button to generate your assigned earthquake number (1–35).</p>
 
-<button onclick="generateNumber()">Generate Number</button>
+<div id="number">?</div>
+
+<button onclick="spin()">Generate Number</button>
 
 <script>
-function generateNumber() {
-let num = Math.floor(Math.random() * 35) + 1;
-document.getElementById("result").innerHTML = num;
+
+function spin() {
+
+let counter = 0;
+
+let spinner = setInterval(function(){
+
+let random = Math.floor(Math.random() * 35) + 1;
+
+document.getElementById("number").innerHTML = random;
+
+counter++;
+
+if(counter > 15){
+clearInterval(spinner);
 }
+
+},100);
+
+}
+
 </script>
 
 </body>
